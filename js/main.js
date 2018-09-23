@@ -5,6 +5,8 @@ function uuidv4() {
 }
 
 function createNewItem(text, uuid = uuidv4(), count = 1) {
+  if(text == '') { return; }
+
   var a = $('<a href="' + uuid + '" class="label-link list-group-item d-flex justify-content-between align-items-center" />')
   a.html('<span class="text">' + text + '</span>' + '<span class="value badge badge-primary badge-pill">'+ count + '</span>');
   $('#label-list').append(a);
