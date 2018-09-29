@@ -45,6 +45,13 @@ function load() {
   }
 }
 
+function clear() {
+  if (window.confirm("Do you really want to clear the list?")) {
+    $('#label-list').empty();
+    window.localStorage.clear();
+  }
+}
+
 $(function() {
   $('#add-new-label').on('click', function(e) {
     e.preventDefault();
@@ -59,6 +66,12 @@ $(function() {
 
     updateLabelCount($(this).find('.value'));
     save();
+  });
+
+  $('#clear-list').on('click', function(e) {
+    e.preventDefault();
+
+    clear();
   });
 
   load();

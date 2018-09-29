@@ -1,6 +1,3 @@
-form {
-  margin-top: 20px;
-}
-#label-list {
+.form, .list-group, .row {
   margin-top: 20px;
 }
